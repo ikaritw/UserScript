@@ -7,6 +7,7 @@
 // @match      https://webmail.gigabyte.com/owa/?modurl=0
 // @require    http://code.jquery.com/jquery-2.1.1.min.js
 // @copyright  2014+, jazz.lin
+// @author     jazz.lin@gigabyte.com
 // ==/UserScript==
 
 Array.prototype.insert = function(index) {
@@ -104,6 +105,7 @@ $(function() {
 					//shwNwItmDlg("寄件者", "主旨", "lnkNwMl", "");
 					__shwNwItmDlg(c, e, a, d);
 					UserScript['showNotifications']("from " + c, e, null);
+					checkUnRead();
 				};
 				console.info("showNotifications覆寫完成");
 			} else {
