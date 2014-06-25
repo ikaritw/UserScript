@@ -26,9 +26,17 @@ $(function() {
 		var checkUnreadSecond = 30;
 		var checkUnRead = function() {
 			var splitStr = " - ";
-			var ur = document.getElementsByClassName('ur');
+
+			//目錄A對應是mainView，用div.id反查相同id的a
+			var mainView = $('#divMainView').find('.mainView:visible');
+			var nodeid = mainView.attr('id');
+			nodeid = nodeid.substring(1); //b+nodeid
+			var selectedNode = $('a.trNd[id="f' + nodeid + '"]'); //f+nodeid
+			var selectedName = selectedNode.find('span[id="spnFldrNm"]').text();
+
 			var ti = document.title.split(splitStr);
-			var unreadMark = ur.length + "則未讀信件";
+			var ur = mainView.find('.ur');
+			var unreadMark = ur.length + "則[" + selectedName + "]的未讀信件";
 			if (ti.length == 2) {
 				ti.insert(0, unreadMark);
 			} else if (ti.length == 3) {
@@ -36,10 +44,20 @@ $(function() {
 			}
 			document.title = ti.join(splitStr);
 		};
+
 		setTimeout((function() {
 			checkUnRead();
 			__checkUnReadInt = setInterval(checkUnRead, 1000 * checkUnreadSecond);
 		}), 1000);
+
+		//點擊資料夾時更新數量
+		var folderTreeNode = $('div.trNdHl a.trNd[_t="folderTreeNode"]');
+		console.log("folderTreeNode.length:" + folderTreeNode.length);
+		folderTreeNode.on('click', function() {
+			checkUnRead();//點擊好像沒作用
+		});
+
+
 
 		var initNotification = function() {
 			console.info("initNotification覆寫開始");
