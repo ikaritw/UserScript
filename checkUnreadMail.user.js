@@ -6,6 +6,7 @@
 // @match      https://webmail.gigabyte.com/owa/
 // @match      https://webmail.gigabyte.com/owa/?modurl=0
 // @require    http://code.jquery.com/jquery-2.1.1.min.js
+// @downloadURL  https://github.com/ikaritw/UserScript/raw/master/checkUnreadMail.user.js
 // @copyright  2014+, jazz.lin
 // @author     jazz.lin@gigabyte.com
 // ==/UserScript==

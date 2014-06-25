@@ -5,6 +5,7 @@
 // @description  Smart-Query Ext for chrome
 // @match      http://10.1.1.110/Smart-Query/*
 // @require    http://code.jquery.com/jquery-2.1.1.min.js
+// @downloadURL  https://github.com/ikaritw/UserScript/raw/master/Smart-Query-Ext.user.js
 // @auther     jazz.lin@gigabyte.com
 // @copyright  2012+, Jazz
 // ==/UserScript==
