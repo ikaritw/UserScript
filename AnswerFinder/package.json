@@ -1,0 +1,11 @@
+{
+  "name": "AnswerFinder",
+  "version": "0.0.1",
+  "description": "請從 1 - 10 取出 4 個數字，4 個數字不可重複，總和必須為 15",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ikaritw",
+  "license": "MIT"
+}
